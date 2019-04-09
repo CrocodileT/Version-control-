@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include "Header.h"
 
 bool res_found = false; //Храним результат поиска версии по дереву
