@@ -346,24 +346,24 @@ void EditFile(Tree *head, int version, std::string name, bool in_tree, std::stri
 }
 
 int main() {
-	int leng_name_fail = 0,
-		leng_str,
-		version = 0, //В этой переменной храним версию формата int
-		ind, //Индексовые переменные
-		jnd,
-		i = 0,
-		version_pull = 0; //Храним то, к какой версии делаем откат
+	int leng_name_fail = 0;
+	int leng_str;
+	int version = 0; //В этой переменной храним версию формата int
+	int ind; //Индексовые переменные
+	int jnd;
+	int i = 0;
+	int version_pull = 0; //Храним то, к какой версии делаем откат
 	bool check_open_fail = false;
 	std::ifstream in;
 	std::ofstream out;
-	std::string name_fail, //Храним полное имя файла
-		command, //Храним обозначения команд редактирования в формате: '+', '-', '='
-		name_push, //Здесь заранее создаем имя новой версии
-		data, //Тут подробности изменения для операция вроде: add index data
-		all_change, //Строка с родительскими версиями (команды редактирования)
-		str_change, //Все команды редактирования нынешней версии, хранится от нажатия open/push до push
-		main_str, //Здесь хранятся базовые рабочие данные
-		name_without_version; //тут хранится имя без версии формата : name.txt
+	std::string name_fail; //Храним полное имя файла
+	std::string command; //Храним обозначения команд редактирования в формате: '+', '-', '='
+	std::string name_push; //Здесь заранее создаем имя новой версии
+	std::string data; //Тут подробности изменения для операция вроде: add index data
+	std::string all_change; //Строка с родительскими версиями (команды редактирования)
+	std::string str_change; //Все команды редактирования нынешней версии, хранится от нажатия open/push до push
+	std::string main_str; //Здесь хранятся базовые рабочие данные
+	std::string name_without_version; //тут хранится имя без версии формата : name.txt
 	Tree now_tree;  //рабочий элемент дерева
 
 	std::cin >> command;
